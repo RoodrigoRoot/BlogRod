@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/profile/profile.css'%}"/>
+{% endblock  %}
+
+{% block content %}
+    
+    <div class="slash" > 
+    <img class="slash__profile" src={% static 'img/profile/man.jpg' %} />
+    </div>
+    <img class="img"  src={{profile.photo_profile.url}} />
+    {{profile.user.username}}
+    <p>{{request.path}}</p>
+{% endblock  %}

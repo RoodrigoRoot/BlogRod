@@ -1,0 +1,56 @@
+
+.navbar{
+    width: 90%;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family:  cursive;
+    
+}
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    
+}
+
+.navbar ul li > a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.navbar .nav__right{
+    margin-right: -30px;
+}
+
+.navbar .nav__right li > a {
+    margin-left: 10px;
+    margin-right: 15px;
+    padding: 10px;
+}
+
+
+#login{
+    border: 1px solid transparent;
+}
+
+#login:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+    
+}
+
+#register{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#register:hover{
+    background-color: white;
+    color: #181818;
+ 
+}

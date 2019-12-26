@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Inicio{% endblock %}
+
+{% block content %}
+<img class="back__index animated bounce" src=" {{article.image.url}}" alt="Ago" />
+<h1 class=" text__over animated bounceInDown">{{article.name}}</h1>
+<h2 class="text__over text__second animated bounceInUp">{{article.subtitle}}</h2>
+<a class="btn__start animated bounceInLeft" href="#">Empezar</a>
+<section class="index__content">
+    <article class="content__article">
+        <h2 class="congratulations">SI ESTAS AQUI ES PORQUE AL FIN SABES QUE NO SABES</h2>
+            <h2>¡Felicidades!</h2>
+    </article>
+    <article class="index__cards">
+        <h3>El mundo esta avanzando y no tienes porque dar el proximo paso tu solo</h3>
+        <div>
+            <img src="{% static 'img/cod.jpg' %}" alt="codigo" width="200">
+        </div>
+        
+    </article>
+    {{article.image.url}}
+    <div class="index__note">
+        <h3>Solo ten en cuenta una cosa:</h3>
+        <blockquote>Cada día se vuelve más fácil. Pero tienes que hacerlo todos los días.
+            Esa es la parte difícil. Pero sí se vuelve más fácil.</blockquote>
+            <cite>-Baboon de Bojack Horseman</cite>
+            <h2> {{article.image}}</h2>
+    </div>
+</section>
+{% endblock  %}
