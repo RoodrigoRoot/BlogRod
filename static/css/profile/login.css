@@ -1,0 +1,59 @@
+.log__img{
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    object-fit:cover;
+    filter: hue-rotate(90deg);
+}
+
+.log__text{
+    font-size: 3rem;
+    position: absolute;
+    top: 5%;
+    left:40%;
+    color: white;
+    
+}
+
+.log__form{
+    margin-top: 20px;
+    text-align: center;
+}
+
+input{
+    text-align: center;
+    font-size: 22px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border: 1px solid black;
+    padding: 5px;
+    width: 25rem;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.login__btn{
+    margin-top: 20px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    transition: background-color .8s ease-in ;
+    transition: color .2s ease-in;
+}
+
+.login__btn:hover{
+    color: #222;
+    background-color: white;
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    .log__text{
+        left:10%;
+    }
+
+    input{
+        font-size: 16px;
+        width: 18rem;
+    }
+}
