@@ -9,23 +9,30 @@
 <a class="btn__start animated bounceInLeft" href="#">Empezar</a>
 <section class="index__content">
     <article class="content__article">
-        <h2 class="congratulations">SI ESTAS AQUI ES PORQUE AL FIN SABES QUE NO SABES</h2>
-            <h2>¡Felicidades!</h2>
+        <h2 class="congratulations animated bounce">SI ESTAS AQUI ES PORQUE AL FIN SABES QUE NO SABES</h2>
+            <h2 class="congratulations animated bounce">¡Felicidades!</h2>
     </article>
     <article class="index__cards">
         <h3>El mundo esta avanzando y no tienes porque dar el proximo paso tu solo</h3>
-        <div>
-            <img src="{% static 'img/cod.jpg' %}" alt="codigo" width="200">
-        </div>
         
+            <img src="{% static 'img/cod.jpg' %}" alt="codigo" class="index__img" />
+        <div class="introduceme">
+            <div class="intro__text">
+                <p>123qweqwe Es un proyecto para apoyarte con todas las dudas que tengas acerca programación en Python o Javascript</p>
+                <p>Aquí encontrarás blogs, artículos, tutoriales, tanto de cosas básicas como avanzadas, que te ayudarán entu día a día, para poder ser cada vez mejor en este mundo tan competitivo y tan deseoso de aprender</p>
+               </div>
+               <img class="intro_gif" src="https://media.giphy.com/media/MGdfeiKtEiEPS/giphy.gif" alt="">
+            
+            
+        </div>
     </article>
-    {{article.image.url}}
+    
     <div class="index__note">
         <h3>Solo ten en cuenta una cosa:</h3>
         <blockquote>Cada día se vuelve más fácil. Pero tienes que hacerlo todos los días.
             Esa es la parte difícil. Pero sí se vuelve más fácil.</blockquote>
             <cite>-Baboon de Bojack Horseman</cite>
-            <h2> {{article.image}}</h2>
+    
     </div>
 </section>
 {% endblock  %}
