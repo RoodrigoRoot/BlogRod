@@ -1,5 +1,8 @@
 {% extends "core/base.html" %}
 {% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/index.css' %}">
+{% endblock %}
 {% block title %}Perfil{% endblock %}
 {% block img %}
 <img class="nav-img" src="{% static 'img/back.jpg' %}" alt="Baner">
@@ -10,6 +13,7 @@
     <article style="border-color: red;">
         <h2>Bienvenido a BlogRod</h2>
         <h3>El Lugar de los que no sabemos nada pero queremos todo</h3>
+        <a class="btn-index" href="">Empezar</a>
     </article>
 </section>
 

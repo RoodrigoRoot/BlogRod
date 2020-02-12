@@ -13,6 +13,7 @@
     {% block head %}{%endblock%}
     <title>{%block title%}{%endblock%}</title>
 </head>
+<body>
 {% block img%} {%endblock%}
 
 <header>
@@ -20,7 +21,9 @@
         {% include 'core/navbar.html'%}
     </nav>
 </header>
-<body>
-    {%block content%} {%endblock%}
+
+    <div class="container">
+        {%block content%} {%endblock%}
+    </div>
 </body>
 </html>
