@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{%load static %}
+
+{%block title %} Login {%endblock%}
+
+{%block head%}  
+<link rel="stylesheet" type="text/css" href="{% static 'login/login.css' %}">
+{%endblock%}
+
+{% block content %}
+<div class="container-form-login">
+    <form class="form-login" action="" method="post">
+        {% for  form in forms %}
+            {{form}}
+            
+        {% endfor %}
+        {{form.as_ul}}
+        {% csrf_token %}
+        {{error}}
+        <br/>
+        <input id="btn-login" type="submit" value="INICAR"/>
+    </form>
+</div>
+{%endblock%}

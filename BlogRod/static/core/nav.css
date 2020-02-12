@@ -1,0 +1,46 @@
+
+.nav-content{
+    position: relative;
+    text-align: center;
+}
+
+.nav-img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+    
+}
+
+ul{
+    
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    
+}
+
+.nav-logo{
+    padding: 10px;
+}
+
+.nav-list{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list li > a {
+    font-size: 18px;
+    color: #eeeaf1;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+.nav-list ul > li > a{    
+padding: 0 50px;
+
+}
+
