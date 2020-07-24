@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -8,17 +9,16 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="{% static '/style.css' %}">
   <title>{% block title %}Inicio{% endblock %}</title>
 </head>
 
 <body>
-
   <div class="container-fluid bg-success p-0">
     <section>
       <header class="header" style="background-image: linear-gradient(rgba(95, 114, 190, .8), rgba(155, 35, 234, .7)), url(https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg);">
         <nav class="navbar  navbar-expand-lg  navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">BlogRod</a>
+          <a class="navbar-brand" href="{% url 'home' %}">BlogRod</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,22 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Blogs</a>
               </li>
             </ul>
+            {% if not request.user.is_authenticated %}
             <ul class="navbar-nav">
-              <button type="button" class="btn btn-outline-primary mr-lg-3">Entrar</button>
+              <a href="{% url 'login' %}" class="btn btn-outline-primary mr-lg-3">Entrar</a>
               <button type="button" class="btn btn-outline-success">Registrar</button>
             </ul>
+            {% else %}
+            <ul class="navbar-nav">
+              <a href="{% url 'logout' %}" class="btn btn-outline-primary mr-lg-3">Salir</a>
+            </ul>
+            {% endif %}
           </div>
         </nav>
         <div class="header-title">
@@ -47,10 +53,13 @@
   </div>
 
   <div class="container-fluid content text-center">
+    {% if request.path == "/" %}
     <form class="p-5">
       <input type="search" name="" id="" class="rounded w-25 p-1" placeholder="Search in our blog">
       <a href="#" class="btn btn-outline-success">Search</a>
     </form>
+    {% endif %}
+    {% block titlepage %}{% endblock %}
     <main>
       {% block content %} {% endblock %}
    

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+
+{% block title %}Inicio de Sesión{% endblock %}
+{% block titlepage %}<p class="display-3">Inicio de sesión</p>{% endblock %}
+{% block content %}
+    <form method="post" class="w-25 mx-auto">{% csrf_token %} 
+        {{ form|crispy }}
+        <input type="submit" value="Entrar" class="btn btn-success">
+        <p>¿Olvidaste tu contraseña? <a href="#">Click Aquí</a></p>
+        <p>¿No tienes cuenta? <a href="#">Registrate Aquí</a></p>
+        <div>{{ non_form_errors }}</div>
+    </form>
+{% endblock %}
