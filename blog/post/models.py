@@ -5,6 +5,7 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(verbose_name=("Titulo"), max_length=50)
     content = models.TextField(verbose_name=("Contenido"))
+    image = models.ImageField(verbose_name=("Imagen"), upload_to="post")
     author = models.ForeignKey("account.Profile", verbose_name=("Perfil"), on_delete=models.CASCADE)
     
     def __str__(self):

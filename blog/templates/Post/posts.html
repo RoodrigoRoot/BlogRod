@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="row mx-auto">
+  <div class="col-lg-9 col-md-9 col-sm-12 mx-auto">
+
+    <div class="row row-cols-1 row-cols-md-3">
+      {% for post in posts %}
+
+      <div class="col-md-4  col-sm-6 mb-4">
+        <div class="card">
+          <img src="{{post.image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.content|truncatewords:15}}</p>
+            <a href="#">Ver más</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-md-12  col-sm-12 col-lg-3 mb-4">
+    <div class="card text-center">
+      <img width="100" height="100" class="rounded-circle mx-auto mt-3"
+        src="https://images.pexels.com/photos/3772623/pexels-photo-3772623.jpeg?cs=srgb&dl=adult-frowned-male-writer-working-on-typewriter-at-home-3772623.jpg&fm=jpg"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Autor</h5>
+        <p class="card-text">{{author.user.username}}</p>
+        <a href="#">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
